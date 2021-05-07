@@ -1,0 +1,13 @@
+$colors: (
+  'red': #990000,
+  'green': #009900,
+  'blue': #000099,
+);
+
+@function custom-color($color) {
+  @if false == map-has-key($colors, $color) {
+    @error 'No color exists for "#{$color}". Check the abstracts/color file for the available colors.';
+  }
+
+  @return map-get($colors, $color);
+}
