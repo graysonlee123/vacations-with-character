@@ -1,0 +1,6 @@
+/// Make a container with a width based on the viewport
+@mixin container {
+  max-width: clamp(10rem, 85vw, 76rem);
+  margin-left: auto;
+  margin-right: auto;
+}

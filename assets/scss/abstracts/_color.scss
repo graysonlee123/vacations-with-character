@@ -1,10 +1,9 @@
 $colors: (
-  'red': #990000,
-  'green': #009900,
-  'blue': #000099,
+  'white': hsl(0, 0%, 100%),
+  'ocean': hsl(191, 59%, 55%),
 );
 
-@function custom-color($color) {
+@function color($color) {
   @if false == map-has-key($colors, $color) {
     @error 'No color exists for "#{$color}". Check the abstracts/color file for the available colors.';
   }

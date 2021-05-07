@@ -21,6 +21,7 @@ $font-sizes: (
   ),
 );
 
+/// Generate a font size that includes a line height from the map above
 /// @param {$size} string [base] The font size to get from the map above
 @mixin fs($size: base) {
   @if false == map-has-key($font-sizes, $size) {
