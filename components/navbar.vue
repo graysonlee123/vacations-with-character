@@ -85,9 +85,19 @@ export default {
   vertical-align: bottom;
 }
 
+.links-wrapper {
+  display: none;
+}
+
 .link {
   padding: 0.5rem 0.5rem;
   margin-left: 0.25rem;
   margin-right: 0.25rem;
+}
+
+@media screen and (min-width: 768px) {
+  .links-wrapper {
+    display: initial;
+  }
 }
 </style>
