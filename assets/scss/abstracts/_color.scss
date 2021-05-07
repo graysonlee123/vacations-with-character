@@ -1,6 +1,11 @@
 $colors: (
   'white': hsl(0, 0%, 100%),
+  'black': hsl(0, 0%, 0%),
   'ocean': hsl(191, 59%, 55%),
+  'dark-gray': hsl(0, 0%, 17%),
+  'gray': hsl(0, 0%, 32%),
+  'light-gray': hsl(0, 0%, 70%),
+  'very-light-gray': hsl(0, 0%, 90%),
 );
 
 /// @return {color} Returns a color from the map

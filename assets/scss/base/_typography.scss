@@ -1,6 +1,8 @@
 @use '../mixins' as m;
+@use '../abstracts' as a;
 
 body {
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   @include m.fs('base');
+  color: a.color('gray');
 }

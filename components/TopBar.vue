@@ -17,7 +17,21 @@
 </template>
 
 <style lang="scss" scoped>
+@use '~/assets/scss/abstracts' as a;
 @use '~/assets/scss/mixins' as m;
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: a.color('ocean');
+}
+
+.bar {
+  color: a.color('gray');
+}
 
 .container {
   @include m.container;
