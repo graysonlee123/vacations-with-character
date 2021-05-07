@@ -3,6 +3,7 @@ $colors: (
   'ocean': hsl(191, 59%, 55%),
 );
 
+/// @return {color} Returns a color from the map
 @function color($color) {
   @if false == map-has-key($colors, $color) {
     @error 'No color exists for "#{$color}". Check the abstracts/color file for the available colors.';
