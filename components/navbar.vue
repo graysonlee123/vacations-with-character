@@ -3,10 +3,10 @@
 </template>
 
 <style lang="scss" scoped>
-@import '~/assets/scss/abstracts/color';
+@use '~/assets/scss/abstracts/' as a;
 
 .navbar {
-  background-color: custom-color('blue');
+  background-color: a.custom-color('blue');
   padding: 2rem;
 }
 </style>

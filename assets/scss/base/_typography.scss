@@ -1,0 +1,6 @@
+@use '../mixins' as m;
+
+body {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  @include m.fs('base');
+}

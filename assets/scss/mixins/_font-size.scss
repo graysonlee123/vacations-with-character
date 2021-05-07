@@ -1,0 +1,32 @@
+$font-sizes: (
+  'xs': (
+    'size': 12px,
+    'leading': 1.6,
+  ),
+  'sm': (
+    'size': 13px,
+    'leading': 1.6,
+  ),
+  'base': (
+    'size': 16px,
+    'leading': 1.6,
+  ),
+  'lg': (
+    'size': 28px,
+    'leading': 1.2,
+  ),
+  'xl': (
+    'size': 32px,
+    'leading': 1.2,
+  ),
+);
+
+/// @param {$size} string [base] The font size to get from the map above
+@mixin fs($size: base) {
+  @if false == map-has-key($font-sizes, $size) {
+    @error 'No font size exists for "$#{$size}". Check the mixins/font-size file for the available font sizes.';
+  }
+
+  font-size: map-get(map-get($font-sizes, $size), size);
+  line-height: map-get(map-get($font-sizes, $size), leading);
+}
