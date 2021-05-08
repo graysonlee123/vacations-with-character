@@ -1,37 +1,99 @@
 $font-sizes: (
   '2xs': (
-    'size': 10px,
-    'leading': 1.4,
+    'DEFAULT': (
+      10px,
+      1.4,
+    ),
   ),
   'xs': (
-    'size': 12px,
-    'leading': 1.6,
+    'DEFAULT': (
+      11px,
+      1.6,
+    ),
   ),
   'sm': (
-    'size': 13px,
-    'leading': 1.6,
+    'DEFAULT': (
+      13px,
+      1.6,
+    ),
   ),
   'base': (
-    'size': 16px,
-    'leading': 1.6,
+    'DEFAULT': (
+      14px,
+      1.6,
+    ),
+    'sm': 16px,
   ),
   'lg': (
-    'size': 28px,
-    'leading': 1.2,
+    'DEFAULT': (
+      26px,
+      1.2,
+    ),
+    'sm': 28px,
+    'lg': 30px,
   ),
   'xl': (
-    'size': 32px,
-    'leading': 1.2,
+    'DEFAULT': (
+      28px,
+      1.2,
+    ),
+    'sm': 32px,
+    'lg': 38px,
   ),
 );
 
-/// Generate a font size that includes a line height from the map above
-/// @param {string} $size [base] The font size to get from the map above
+/// Generate a font size that includes a line height from the maps above
+/// @param {string} $size [base] The font size to get from the maps above
 @mixin fs($size: base) {
   @if false == map-has-key($font-sizes, $size) {
     @error 'No font size exists for "$#{$size}". Check the mixins/font-size file for the available font sizes.';
   }
 
-  font-size: map-get(map-get($font-sizes, $size), size);
-  line-height: map-get(map-get($font-sizes, $size), leading);
+  $size-breakpoints: map-get($font-sizes, $size);
+
+  @if map-has-key($size-breakpoints, 'DEFAULT') {
+    $breakpoint-map: map-get($size-breakpoints, 'DEFAULT');
+
+    @if type-of($breakpoint-map) == 'list' {
+      font-size: nth($breakpoint-map, 1);
+
+      @if length($breakpoint-map) > 1 {
+        line-height: nth($breakpoint-map, 2);
+      }
+    } @else {
+      font-size: $breakpoint-map;
+    }
+  }
+
+  @if map-has-key($size-breakpoints, 'sm') {
+    $breakpoint-map: map-get($size-breakpoints, 'sm');
+
+    @media screen and (min-width: 446px) {
+      @if type-of($breakpoint-map) == 'list' {
+        font-size: nth($breakpoint-map, 1);
+
+        @if length($breakpoint-map) > 1 {
+          line-height: nth($breakpoint-map, 2);
+        }
+      } @else {
+        font-size: $breakpoint-map;
+      }
+    }
+  }
+
+  @if map-has-key($size-breakpoints, 'lg') {
+    $breakpoint-map: map-get($size-breakpoints, 'lg');
+
+    @media screen and (min-width: 1400px) {
+      @if type-of($breakpoint-map) == 'list' {
+        font-size: nth($breakpoint-map, 1);
+
+        @if length($breakpoint-map) > 1 {
+          line-height: nth($breakpoint-map, 2);
+        }
+      } @else {
+        font-size: $breakpoint-map;
+      }
+    }
+  }
 }
