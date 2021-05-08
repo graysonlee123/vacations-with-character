@@ -5,16 +5,29 @@
         Specializing in Disney and Universal Orlando&nbsp;Destinations&nbsp;♥
       </span>
       <span class="tel">
-        <a href="tel:+1-800-908-3005"> (800) 908-3005 </a>
+        <a :href="`tel:+1-${phone.plain}`">{{ phone.pretty }}</a>
       </span>
       <span class="email">
-        <a href="mailto:info@vacationswithcharacter.com" target="_blank">
-          info@vacationswithcharacter.com
+        <a :href="`mailto:${email}`" target="_blank">
+          {{ email }}
         </a>
       </span>
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  computed: {
+    email() {
+      return this.$store.state.email
+    },
+    phone() {
+      return this.$store.state.phone
+    },
+  },
+}
+</script>
 
 <style lang="scss" scoped>
 @use '~/assets/scss/abstracts' as a;

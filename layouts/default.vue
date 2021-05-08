@@ -3,5 +3,6 @@
     <TopBar />
     <Navbar />
     <Nuxt />
+    <Footer />
   </main>
 </template>
