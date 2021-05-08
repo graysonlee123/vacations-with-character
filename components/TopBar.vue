@@ -1,8 +1,8 @@
 <template>
-  <div class="bar">
+  <section class="bar">
     <div class="container">
       <span class="tagline">
-        Specializing in Disney and Universal Orlando Destinations ♥
+        Specializing in Disney and Universal Orlando&nbsp;Destinations&nbsp;♥
       </span>
       <span class="tel">
         <a href="tel:+1-800-908-3005"> (800) 908-3005 </a>
@@ -13,7 +13,7 @@
         </a>
       </span>
     </div>
-  </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>
