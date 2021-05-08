@@ -254,7 +254,7 @@ a:hover {
 }
 
 .container {
-  @include m.container;
+  @include m.container('sm');
 }
 
 .flex {

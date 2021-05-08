@@ -1,6 +1,18 @@
+$container-sizes: (
+  'sm': 55.5rem,
+  'DEFAULT': 69.375rem,
+);
+
 /// Make a container with a width based on the viewport
-@mixin container {
-  max-width: clamp(10rem, 85vw, 76rem);
+/// @param {string} $size [DEFAULT] The size of the max width from the map above
+@mixin container($size: 'DEFAULT') {
+  @if false == map-has-key($container-sizes, $size) {
+    @error 'No container size exists for "$#{$size}". Check the mixins/container file for the available sizes.';
+  }
+
+  $max-width: map-get($container-sizes, $size);
+
+  max-width: clamp(10rem, 85vw, #{$max-width});
   margin-left: auto;
   margin-right: auto;
 }
