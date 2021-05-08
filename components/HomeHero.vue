@@ -37,6 +37,7 @@
   width: 100%;
   height: 500px;
   object-fit: cover;
+  vertical-align: bottom;
 }
 
 .text-wrapper {
