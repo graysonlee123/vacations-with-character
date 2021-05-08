@@ -298,11 +298,7 @@ a:hover {
 }
 
 .social {
-  transition: transform 200ms ease;
-}
-
-.social:hover {
-  transform: scale(1.1);
+  @include m.social-hover;
 }
 
 .fine {
