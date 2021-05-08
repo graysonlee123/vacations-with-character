@@ -2,7 +2,7 @@
 @use '../mixins/font-size' as *;
 
 /// Adds a button to a link or button element
-/// @param {$hollow} bool [false] Whether or not the button will be hollow
+/// @param {bool} $hollow [false] Whether or not the button will be hollow
 @mixin button($hollow: false) {
   display: inline-block;
   padding: 0.75rem 2.25rem;

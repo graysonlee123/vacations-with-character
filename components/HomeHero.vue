@@ -63,8 +63,7 @@
 }
 
 .text h1 {
-  @include m.fs(xl);
-  font-weight: lighter;
+  @include m.header($size: 'xl');
 }
 
 .text p {

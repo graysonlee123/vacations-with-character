@@ -1,0 +1,15 @@
+@use 'font-size' as *;
+
+/// Adds styling for a header
+/// @param {string} $size [lg] The size from the font sizes map
+/// @param {string} $weight [thin] The style of the header
+@mixin header($size: lg, $weight: thin) {
+  @include fs($size);
+
+  @if $weight == bold {
+    font-weight: bold;
+    text-transform: uppercase;
+  } @else {
+    font-weight: lighter;
+  }
+}
