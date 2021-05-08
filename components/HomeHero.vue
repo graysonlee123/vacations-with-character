@@ -4,7 +4,7 @@
       <img
         class="image"
         :src="require('~/static/images/girl-in-park-with-balloons.jpeg')"
-        alt="Placeholder"
+        alt="Girl in a theme park with balloons"
       />
       <div class="text-wrapper">
         <div class="text">
@@ -15,7 +15,7 @@
             the Happiest Places on Earth is our Specialty!
           </p>
           <div>
-            <nuxt-link class="button" :to="{ hash: 'destinations' }">
+            <nuxt-link class="button" to="/destinations">
               See Destinations
             </nuxt-link>
           </div>

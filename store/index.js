@@ -7,31 +7,31 @@ export const state = () => ({
   socials: [
     {
       id: 'facebook',
-      link: 'https://facebook.com/',
+      link: 'https://www.facebook.com/VacationsWithCharacter/',
       ariaLabel: 'Visit us on Facebook',
       alt: 'Facebook Logo',
     },
     {
       id: 'twitter',
-      link: 'https://twitter.com/',
+      link: 'https://twitter.com/Where_Fun_Bgins',
       ariaLabel: 'Visit us on Twitter',
       alt: 'Twitter Logo',
     },
     {
       id: 'instagram',
-      link: 'https://instagram.com/',
+      link: 'https://www.instagram.com/vacationswithcharacter/',
       ariaLabel: 'Visit us on Instagram',
       alt: 'Instagram Logo',
     },
     {
       id: 'pinterest',
-      link: 'https://pinterest.com/',
+      link: 'https://www.pinterest.com/Where_Fun_Bgins/',
       ariaLabel: 'Visit us on Pinterest',
       alt: 'Pinterest Logo',
     },
     {
       id: 'linkedin',
-      link: 'https://linkedin.com/',
+      link: 'https://www.linkedin.com/in/robin-gantek-4a8736105/',
       ariaLabel: 'Visit us on LinkedIn',
       alt: 'LinkedIn Logo',
     },
