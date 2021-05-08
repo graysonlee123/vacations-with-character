@@ -17,4 +17,6 @@ $ npm run start
 $ npm run generate
 ```
 
+[Fix Vips for M1 Chip](https://github.com/nuxt/image/issues/204)
+
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

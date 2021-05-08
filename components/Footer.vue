@@ -45,7 +45,7 @@
               :aria-label="ariaLabel"
             >
               <img
-                src="https://via.placeholder.com/48x48"
+                :src="require(`~/static/images/social-icons/${id}-72x72.jpeg`)"
                 width="24"
                 height="24"
                 :alt="alt"
@@ -62,34 +62,40 @@
         <div class="badges">
           <span>
             <img
-              src="https://via.placeholder.com/132x30"
+              :src="
+                require('~/static/images/badges/universal-preferred-agency-@2x.jpeg')
+              "
               width="132"
-              height="30"
-              alt="Placeholder"
+              height="31.5"
+              alt="Universal Preferred Travel Agency"
             />
           </span>
           <span>
             <img
-              src="https://via.placeholder.com/95x37"
-              width="95"
-              height="37"
-              alt="Placeholder"
+              :src="require('~/static/images/badges/clia-agent-@2x.jpeg')"
+              width="96.5"
+              height="36.5"
+              alt="CLIA Agent"
             />
           </span>
           <span>
             <img
-              src="https://via.placeholder.com/77x35"
-              width="77"
-              height="35"
-              alt="Placeholder"
+              :src="
+                require('~/static/images/badges/travel-leaders-network-@2x.jpeg')
+              "
+              width="78"
+              height="36"
+              alt="Travel Leaders Network Member"
             />
           </span>
           <span>
             <img
-              src="https://via.placeholder.com/70x33"
-              width="70"
-              height="33"
-              alt="Placeholder"
+              :src="
+                require('~/static/images/badges/disney-authorized-vacation-planner-@2x.jpeg')
+              "
+              width="70.5"
+              height="33.5"
+              alt="Disney Authorized Vacation Planner"
             />
           </span>
         </div>

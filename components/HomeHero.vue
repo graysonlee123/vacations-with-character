@@ -3,7 +3,7 @@
     <div class="wrapper">
       <img
         class="image"
-        src="https://via.placeholder.com/1440x728?text=Placeholder"
+        :src="require('~/static/images/girl-in-park-with-balloons.jpeg')"
         alt="Placeholder"
       />
       <div class="text-wrapper">
@@ -47,6 +47,7 @@
   width: 100%;
   height: 100%;
 
+  background-color: rgba(0, 0, 0, 0.4);
   text-align: center;
   color: a.color('white');
 }

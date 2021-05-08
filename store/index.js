@@ -6,31 +6,31 @@ export const state = () => ({
   },
   socials: [
     {
-      id: 'fb',
+      id: 'facebook',
       link: 'https://facebook.com/',
       ariaLabel: 'Visit us on Facebook',
       alt: 'Facebook Logo',
     },
     {
-      id: 'tw',
+      id: 'twitter',
       link: 'https://twitter.com/',
       ariaLabel: 'Visit us on Twitter',
       alt: 'Twitter Logo',
     },
     {
-      id: 'ig',
+      id: 'instagram',
       link: 'https://instagram.com/',
       ariaLabel: 'Visit us on Instagram',
       alt: 'Instagram Logo',
     },
     {
-      id: 'pn',
+      id: 'pinterest',
       link: 'https://pinterest.com/',
       ariaLabel: 'Visit us on Pinterest',
       alt: 'Pinterest Logo',
     },
     {
-      id: 'in',
+      id: 'linkedin',
       link: 'https://linkedin.com/',
       ariaLabel: 'Visit us on LinkedIn',
       alt: 'LinkedIn Logo',
