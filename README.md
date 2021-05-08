@@ -1,22 +1,21 @@
-# vwc
+# Vacations with Character
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0a2a3656-b714-40a3-a2ca-95bc35aa3832/deploy-status)](https://app.netlify.com/sites/vacationswithcharacter/deploys)
 
 ## Build Setup
 
 ```bash
 # install dependencies
-$ npm install
+$ npm i
 
 # serve with hot reload at localhost:3000
 $ npm run dev
 
-# build for production and launch server
-$ npm run build
-$ npm run start
-
 # generate static project
 $ npm run generate
+
+# serve the site locally
+$ npm start
 ```
 
-[Fix Vips for M1 Chip](https://github.com/nuxt/image/issues/204)
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+See [Nuxt.js docs](https://nuxtjs.org) for more information.
