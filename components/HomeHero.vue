@@ -15,7 +15,7 @@
             the Happiest Places on Earth is our Specialty!
           </p>
           <div>
-            <nuxt-link :to="{ hash: 'destinations' }">
+            <nuxt-link class="button" :to="{ hash: 'destinations' }">
               See Destinations
             </nuxt-link>
           </div>
@@ -28,9 +28,6 @@
 <style lang="scss" scoped>
 @use '~/assets/scss/abstracts' as a;
 @use '~/assets/scss/mixins' as m;
-
-.hero {
-}
 
 .wrapper {
   position: relative;
@@ -74,6 +71,10 @@
   margin-top: 1rem;
   margin-bottom: 3rem;
   max-width: 60ch;
+}
+
+.button {
+  @include m.button;
 }
 
 @media screen and (min-width: 768px) {
