@@ -13,13 +13,17 @@
         </nuxt-link>
       </div>
       <div class="links-wrapper">
-        <nuxt-link
-          class="link"
-          v-for="{ label, slug } of links"
-          :key="slug"
-          :to="slug"
-          >{{ label }}</nuxt-link
-        >
+        <span v-for="{ label, slug } of links" :key="slug">
+          <a
+            v-if="$links(slug)"
+            :href="slug"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ label }}
+          </a>
+          <nuxt-link v-else class="link" :to="slug">{{ label }}</nuxt-link>
+        </span>
       </div>
     </div>
   </nav>
@@ -36,27 +40,27 @@ export default {
         },
         {
           label: 'Destinations',
-          slug: '/',
+          slug: '/destinations',
         },
         {
           label: 'Tickets',
-          slug: '/',
+          slug: '/tickets',
         },
         {
           label: 'Testimonials',
-          slug: '/',
+          slug: '/testimonials',
         },
         {
           label: 'Services',
-          slug: '/',
+          slug: '/services',
         },
         {
           label: 'About',
-          slug: '/',
+          slug: '/about',
         },
         {
           label: 'Blog',
-          slug: '/',
+          slug: 'https://vacationswithcharacter.blog',
         },
       ],
     }
@@ -73,7 +77,7 @@ a {
   text-decoration: none;
 }
 
-a.nuxt-link-active {
+a.nuxt-link-exact-active {
   font-weight: bold;
 }
 

@@ -6,7 +6,15 @@
           <span class="label">{{ title }}</span>
           <ul>
             <li v-for="{ label, slug } of links" :key="slug">
-              <nuxt-link :to="slug">
+              <a
+                v-if="$links(slug)"
+                :href="slug"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {{ label }}
+              </a>
+              <nuxt-link v-else :to="slug">
                 {{ label }}
               </nuxt-link>
             </li>
@@ -116,23 +124,23 @@ export default {
             },
             {
               label: 'Destinations',
-              slug: '/',
+              slug: '/destinations',
             },
             {
               label: 'Tickets',
-              slug: '/',
+              slug: '/tickets',
             },
             {
               label: 'Services',
-              slug: '/',
+              slug: '/services',
             },
             {
               label: 'About Us',
-              slug: '/',
+              slug: '/about',
             },
             {
               label: 'Wellbeing',
-              slug: '/',
+              slug: '/wellbeing',
             },
           ],
         },
@@ -141,15 +149,15 @@ export default {
           links: [
             {
               label: 'Request a Quote',
-              slug: '/',
+              slug: '/quote',
             },
             {
               label: 'Happy Clients',
-              slug: '/',
+              slug: '/testimonials',
             },
             {
               label: 'Blog',
-              slug: '/',
+              slug: 'https://vacationswithcharacter.blog',
             },
             {
               label: 'Videos',
@@ -157,7 +165,7 @@ export default {
             },
             {
               label: 'Get Help',
-              slug: '/',
+              slug: '/contact',
             },
             {
               label: 'FAQs',
@@ -170,15 +178,15 @@ export default {
           links: [
             {
               label: 'Privacy Policy',
-              slug: '/',
+              slug: '/privacy-policy',
             },
             {
               label: 'Terms / Conditions',
-              slug: '/',
+              slug: '/terms-conditions',
             },
             {
               label: 'Authorization',
-              slug: '/',
+              slug: '/authorization',
             },
           ],
         },
@@ -187,7 +195,7 @@ export default {
           links: [
             {
               label: 'Careers',
-              slug: '/',
+              slug: '/careers',
             },
             {
               label: 'Something 1',
