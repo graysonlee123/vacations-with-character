@@ -305,7 +305,7 @@ a:hover {
   gap: 1rem;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 446px) {
   .flex {
     flex-direction: row;
     flex-wrap: wrap;

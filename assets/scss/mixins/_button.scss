@@ -21,4 +21,12 @@
     color: a.color('white');
     background-color: a.color('ocean');
   }
+
+  box-shadow: 0 0 0 0 adjust-color($color: a.color('ocean'), $alpha: 1);
+  transition: box-shadow 100ms ease-in-out;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px adjust-color($color: a.color('ocean'), $alpha: -0.5);
+  }
 }
