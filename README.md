@@ -19,3 +19,7 @@ $ npm start
 ```
 
 See [Nuxt.js docs](https://nuxtjs.org) for more information.
+
+## Helpful Documentation
+
+- [Splide Documentation](https://splidejs.com/category/users-guide/)

@@ -19,6 +19,7 @@
       <BlocksLink link="/">Meet Our <br />Team</BlocksLink>
       <BlocksLink link="/quote">Request <br />a Quote</BlocksLink>
     </BlocksGrid>
+    <DestinationSlider />
     <ImageCallToAction />
   </div>
 </template>
