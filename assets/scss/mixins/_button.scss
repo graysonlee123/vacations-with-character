@@ -1,17 +1,17 @@
 @use '../abstracts/color' as a;
 @use '../mixins/font-size' as *;
+@use '../mixins/button-reset' as *;
 
 /// Adds a button to a link or button element
 /// @param {bool} $hollow [false] Whether or not the button will be hollow
 @mixin button($hollow: false) {
-  display: inline-block;
-  padding: 0.75rem 2.25rem;
+  @include button-reset();
+
   border-radius: 4px;
 
   font-weight: bold;
   text-transform: uppercase;
   @include fs(sm);
-  text-decoration: none;
 
   @if $hollow == true {
     color: a.color('ocean');
