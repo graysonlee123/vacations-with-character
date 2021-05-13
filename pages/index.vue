@@ -34,7 +34,7 @@
       <Row>
         <Column :width="6"> Image </Column>
         <Column :width="6">
-          <Dropdown :items="promiseDropdownItems" />
+          <Dropdown :items="promiseDropdownItems" title="Our Promise To You" />
         </Column>
       </Row>
     </Container>
