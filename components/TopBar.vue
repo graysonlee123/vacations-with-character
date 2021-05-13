@@ -42,10 +42,6 @@ a:hover {
   color: a.color('ocean');
 }
 
-.bar {
-  color: a.color('gray');
-}
-
 .container {
   @include m.container;
   padding-top: 0.25rem;

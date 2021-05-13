@@ -25,7 +25,16 @@
           <nuxt-link v-else class="link" :to="slug">{{ label }}</nuxt-link>
         </span>
       </div>
+      <div class="hamburger-wrapper">
+        <button
+          class="hamburger"
+          aria-controls="mobile-navigation"
+          :aria-expanded="mobileMenuOpen ? 'true' : 'false'"
+          @click="handleHamburgerClick"
+        ></button>
+      </div>
     </div>
+    <MobileMenu :open="mobileMenuOpen" />
   </nav>
 </template>
 
@@ -33,6 +42,7 @@
 export default {
   data() {
     return {
+      mobileMenuOpen: false,
       links: [
         {
           label: 'Home',
@@ -65,6 +75,18 @@ export default {
       ],
     }
   },
+  methods: {
+    handleHamburgerClick(e) {
+      e.preventDefault()
+
+      this.mobileMenuOpen = !this.mobileMenuOpen
+    },
+  },
+  watch: {
+    $route() {
+      this.mobileMenuOpen = false
+    },
+  },
 }
 </script>
 
@@ -82,6 +104,11 @@ a.nuxt-link-exact-active {
 }
 
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   @include m.fs('base');
@@ -110,9 +137,54 @@ a.nuxt-link-exact-active {
   margin-right: 0.25rem;
 }
 
+.hamburger {
+  @include m.button-reset;
+
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 32px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: a.color('white');
+    transition: transform 600ms ease-in-out;
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) translateY(-4px);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) translateY(4px);
+  }
+
+  &[aria-expanded='true'] {
+    &::before {
+      transform: translate(-50%, -50%) translateY(0) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) translateY(0) rotate(-45deg);
+    }
+  }
+}
+
 @media screen and (min-width: 768px) {
   .links-wrapper {
     display: initial;
+  }
+
+  .hamburger-wrapper {
+    display: none;
   }
 }
 </style>

@@ -44,10 +44,10 @@
 
     <Container>
       <Row>
-        <Column :width="6">
+        <Column :width="[12, 6]">
           <ImageBox ratio="1:1"></ImageBox>
         </Column>
-        <Column :width="6">
+        <Column :width="[12, 6]">
           <Dropdown :items="promiseDropdownItems" title="Our Promise To You" />
         </Column>
       </Row>
