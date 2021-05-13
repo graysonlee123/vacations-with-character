@@ -52,7 +52,13 @@ export default {
         arrows: true,
         pagination: true,
         trimSpace: true,
-        flickMaxPages: 3,
+        breakpoints: {
+          456: {
+            arrows: false,
+            fixedWidth: 240,
+            fixedHeight: 240,
+          },
+        },
       },
     }
   },
