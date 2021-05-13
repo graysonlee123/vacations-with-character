@@ -1,0 +1,9 @@
+@mixin social-hover {
+  transition: transform 200ms ease;
+
+  @media screen and (min-width: 768px) {
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

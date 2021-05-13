@@ -22,10 +22,6 @@
 @use '~/assets/scss/mixins' as m;
 @use '~/assets/scss/abstracts' as a;
 
-.cta {
-  margin-top: 8.25rem;
-}
-
 .container {
   position: relative;
 }
@@ -74,10 +70,7 @@
 
   .container {
     @include m.container;
-    border-radius: 6px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15),
-      0px 0px 15px rgba(0, 0, 0, 0.15);
-    overflow: hidden;
+    @include m.box;
   }
 }
 </style>
