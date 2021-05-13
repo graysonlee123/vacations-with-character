@@ -9,20 +9,32 @@
 
     <Spacer height="5.5rem" />
 
-    <BlocksGrid>
-      <BlocksLink width="wide" link="/services">Our<br />Services</BlocksLink>
-      <BlocksLink link="/">Why Book <br />With Us</BlocksLink>
-      <BlocksSocial>
-        <template v-slot:title>Follow us!</template>
-        <template v-slot:text>
-          We post about relevant <strong>news</strong>, fun
-          <strong>photos</strong>, and helpful <strong>tips</strong> to save you
-          time and money.
-        </template>
-      </BlocksSocial>
-      <BlocksLink link="/">Meet Our <br />Team</BlocksLink>
-      <BlocksLink link="/quote">Request <br />a Quote</BlocksLink>
-    </BlocksGrid>
+    <Container>
+      <Row>
+        <Column :width="[12, 8]">
+          <ImageBox ratio="1:2" link="/services"> Our<br />Services </ImageBox>
+        </Column>
+        <Column :width="[12, 4]">
+          <ImageBox link="/" ratio="full"> Why Book<br />With Us </ImageBox>
+        </Column>
+        <Column :width="[12, 4]">
+          <BlocksSocial>
+            <template v-slot:title>Follow us!</template>
+            <template v-slot:text>
+              We post about relevant <strong>news</strong>, fun
+              <strong>photos</strong>, and helpful <strong>tips</strong> to save
+              you time and money.
+            </template>
+          </BlocksSocial>
+        </Column>
+        <Column :width="[12, 4]">
+          <ImageBox link="/"> Meet Our<br />Team </ImageBox>
+        </Column>
+        <Column :width="[12, 4]">
+          <ImageBox link="/quote"> Request<br />a Quote </ImageBox>
+        </Column>
+      </Row>
+    </Container>
 
     <Spacer height="8.5rem" />
 
@@ -32,7 +44,9 @@
 
     <Container>
       <Row>
-        <Column :width="6"> Image </Column>
+        <Column :width="6">
+          <ImageBox ratio="1:1"></ImageBox>
+        </Column>
         <Column :width="6">
           <Dropdown :items="promiseDropdownItems" title="Our Promise To You" />
         </Column>

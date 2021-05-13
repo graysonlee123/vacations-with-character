@@ -22,10 +22,6 @@
 @use '~/assets/scss/mixins' as m;
 @use '~/assets/scss/abstracts' as a;
 
-.cta {
-  margin-top: 8.25rem;
-}
-
 .container {
   position: relative;
 }

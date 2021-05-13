@@ -6,19 +6,34 @@
     <client-only>
       <Splide :options="splideOptions">
         <SplideSlide>
-          <BlocksLink link="/destinations">Destinations</BlocksLink>
+          <ImageBox link="/destinations"
+            >Disney<br />
+            Destinations</ImageBox
+          >
         </SplideSlide>
         <SplideSlide>
-          <BlocksLink link="/destinations">Destinations</BlocksLink>
+          <ImageBox link="/destinations"
+            >Universal<br />
+            Orlando</ImageBox
+          >
         </SplideSlide>
         <SplideSlide>
-          <BlocksLink link="/destinations">Destinations</BlocksLink>
+          <ImageBox link="/destinations"
+            >Cruising<br />
+            Adventures</ImageBox
+          >
         </SplideSlide>
         <SplideSlide>
-          <BlocksLink link="/destinations">Destinations</BlocksLink>
+          <ImageBox link="/destinations"
+            >Adventures by<br />
+            Disney</ImageBox
+          >
         </SplideSlide>
         <SplideSlide>
-          <BlocksLink link="/destinations">Destinations</BlocksLink>
+          <ImageBox link="/destinations"
+            >All-inclusive<br />
+            Resorts</ImageBox
+          >
         </SplideSlide>
       </Splide>
     </client-only>
@@ -76,6 +91,28 @@ export default {
       transform: scale(1);
       background: a.color('ocean');
     }
+  }
+}
+
+.splide__arrow {
+  background: adjust-color($color: a.color('white'), $alpha: -0.2);
+  color: a.color('light-gray');
+  opacity: 0.75;
+  width: 38px;
+  height: 38px;
+  transition: opacity 200ms ease;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &[disabled] {
+    transition-duration: 400ms;
+    opacity: 0;
+  }
+
+  path {
+    fill: currentColor;
   }
 }
 </style>
