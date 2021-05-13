@@ -13,10 +13,6 @@
 @use '~/assets/scss/mixins' as m;
 @use '~/assets/scss/abstracts' as a;
 
-.blocks {
-  margin-top: 5.5rem;
-}
-
 .container {
   @include m.container;
 }

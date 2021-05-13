@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <div class="container">
+    <Container size="sm">
       <div class="flex">
         <div v-for="{ title, links } of columns" :key="title">
           <span class="label">{{ title }}</span>
@@ -112,7 +112,7 @@
           Character® does not sell or solicit to residents of California
         </p>
       </div>
-    </div>
+    </Container>
   </footer>
 </template>
 
@@ -252,15 +252,10 @@ a:hover {
 }
 
 .footer {
-  margin-top: 8.25rem;
   padding-bottom: 1rem;
 
   color: a.color('gray');
   @include m.fs(sm);
-}
-
-.container {
-  @include m.container('sm');
 }
 
 .flex {

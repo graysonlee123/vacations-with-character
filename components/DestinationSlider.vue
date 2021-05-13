@@ -48,10 +48,6 @@ export default {
 @use '~/assets/scss/mixins' as m;
 @use '~/assets/scss/abstracts' as a;
 
-.destinations {
-  margin-top: 8.5rem;
-}
-
 .container {
   @include m.container;
 }
