@@ -6,7 +6,6 @@
         v-for="({ label, text }, index) of items"
         :key="makeSlug(label)"
         class="dropdown"
-        :class="{ 'is-open': index === openedItem }"
       >
         <div class="label">
           <button
@@ -167,10 +166,8 @@ export default {
   &::after {
     transition: 150ms ease transform 150ms;
   }
-}
 
-.is-open {
-  .button {
+  &[aria-expanded='true'] {
     color: a.color('ocean');
     border-color: a.color('ocean');
 
