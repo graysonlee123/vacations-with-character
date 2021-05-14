@@ -1,5 +1,9 @@
 <template>
-  <div class="box" :style="{ '--padding-top': paddingRatio }">
+  <div
+    class="box"
+    :class="{ 'box-hover': link }"
+    :style="{ '--padding-top': paddingRatio }"
+  >
     <div class="content">
       <picture>
         <img
@@ -98,6 +102,27 @@ export default {
 @media screen and (min-width: 768px) {
   .box {
     padding-top: var(--padding-top);
+  }
+}
+
+// Hover
+.box-hover {
+  .image {
+    transition: transform 800ms ease;
+  }
+
+  .text {
+    transition: transform 700ms cubic-bezier(0.79, -1.04, 0.3, 1.5);
+  }
+
+  &:hover {
+    .image {
+      transform: scale(1.05);
+    }
+
+    .text {
+      transform: scale(1.1);
+    }
   }
 }
 </style>
