@@ -15,6 +15,8 @@
         <img
           class="image"
           :src="require('~/assets/images/girl-in-park-with-balloons.jpeg?webp')"
+          width="1920"
+          height="1180"
           alt="Girl in a theme park with balloons"
         />
       </picture>
