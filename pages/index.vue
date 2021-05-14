@@ -12,10 +12,26 @@
     <Container>
       <Row>
         <Column :width="[12, 8]">
-          <ImageBox ratio="1:2" link="/services"> Our<br />Services </ImageBox>
+          <ImageBox
+            filename="french-polynesia-island.jpeg"
+            :width="1464"
+            :height="724"
+            alt="French Polynesia Island"
+            link="/services"
+          >
+            Our<br />Services
+          </ImageBox>
         </Column>
         <Column :width="[12, 4]">
-          <ImageBox link="/" ratio="full"> Why Book<br />With Us </ImageBox>
+          <ImageBox
+            filename="hat-camera-sunglasses.jpeg"
+            :width="732"
+            :height="732"
+            alt="Hat, camera, and sunglasses on a table"
+            link="/"
+          >
+            Why Book<br />With Us
+          </ImageBox>
         </Column>
         <Column :width="[12, 4]">
           <BlocksSocial>
@@ -28,10 +44,26 @@
           </BlocksSocial>
         </Column>
         <Column :width="[12, 4]">
-          <ImageBox link="/"> Meet Our<br />Team </ImageBox>
+          <ImageBox
+            filename="kayaking-at-sunset.jpeg"
+            :width="724"
+            :height="724"
+            alt="Couple kayaking at sunset"
+            link="/"
+          >
+            Meet Our<br />Team
+          </ImageBox>
         </Column>
         <Column :width="[12, 4]">
-          <ImageBox link="/quote"> Request<br />a Quote </ImageBox>
+          <ImageBox
+            filename="palm-trees-from-below.jpeg"
+            :width="724"
+            :height="724"
+            alt="Palm trees from below"
+            link="/quote"
+          >
+            Request<br />a Quote
+          </ImageBox>
         </Column>
       </Row>
     </Container>
@@ -45,7 +77,12 @@
     <Container>
       <Row>
         <Column :width="[12, 6]">
-          <ImageBox ratio="1:1"></ImageBox>
+          <ImageBox
+            filename="statue-and-dragon.jpeg"
+            :width="880"
+            :height="880"
+            alt="A statue and a draon breathing fire"
+          ></ImageBox>
         </Column>
         <Column :width="[12, 6]">
           <Dropdown :items="promiseDropdownItems" title="Our Promise To You" />

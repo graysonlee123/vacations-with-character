@@ -1,15 +1,15 @@
 <template>
-  <div
-    class="box"
-    :class="{ 'box-full': fill }"
-    :style="{ '--padding-top': !fill && paddingRatio }"
-  >
+  <div class="box" :style="{ '--padding-top': paddingRatio }">
     <div class="content">
-      <img
-        class="image"
-        src="https://source.unsplash.com/600x600/?beach"
-        alt="Placeholder"
-      />
+      <picture>
+        <img
+          class="image"
+          :src="require(`~/assets/images/image-box/${filename}`)"
+          :width="width"
+          :height="height"
+          :alt="alt"
+        />
+      </picture>
       <nuxt-link v-if="link" :to="link" class="link">
         <span class="text">
           <slot>Say Something...</slot>
@@ -22,20 +22,27 @@
 <script>
 export default {
   props: {
-    ratio: {
+    filename: {
       type: String,
-      default: '1:1',
+      required: true,
+    },
+    width: {
+      type: Number,
+      required: true,
+    },
+    height: {
+      type: Number,
+      required: true,
+    },
+    alt: {
+      type: String,
+      required: true,
     },
     link: String,
   },
   computed: {
-    fill() {
-      return this.ratio === 'full'
-    },
     paddingRatio() {
-      const [width, height] = this.ratio.split(':')
-
-      return `${(width / height) * 100}%`
+      return `${(this.height / this.width) * 100}%`
     },
   },
 }
@@ -91,10 +98,6 @@ export default {
 @media screen and (min-width: 768px) {
   .box {
     padding-top: var(--padding-top);
-  }
-
-  .box-full {
-    height: 100%;
   }
 }
 </style>
