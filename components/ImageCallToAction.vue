@@ -1,11 +1,23 @@
 <template>
   <section class="cta">
     <div class="container">
-      <img
-        src="https://via.placeholder.com/1110x396"
-        alt="placeholder"
-        class="image"
-      />
+      <picture>
+        <source
+          :srcset="
+            require('~/assets/images/girl-with-parent-with-castle.jpeg?webp')
+          "
+          type="image/webp"
+        />
+        <source
+          :srcset="require('~/assets/images/girl-with-parent-with-castle.jpeg')"
+          type="image/jpeg"
+        />
+        <img
+          :src="require('~/assets/images/girl-with-parent-with-castle.jpeg')"
+          alt="Girl with her parent walking towards a castle"
+          class="image"
+        />
+      </picture>
       <div class="text-wrapper">
         <h2 class="title">
           An investment in travel is an investment in yourself!

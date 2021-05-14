@@ -25,7 +25,10 @@ export default {
   },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [],
+  buildModules: [
+    // Optimized Images: https://marquez.co/docs/nuxt-optimized-images
+    '@aceforth/nuxt-optimized-images',
+  ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [

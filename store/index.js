@@ -29,11 +29,5 @@ export const state = () => ({
       ariaLabel: 'Visit us on Pinterest',
       alt: 'Pinterest Logo',
     },
-    {
-      id: 'linkedin',
-      link: 'https://www.linkedin.com/in/robin-gantek-4a8736105/',
-      ariaLabel: 'Visit us on LinkedIn',
-      alt: 'LinkedIn Logo',
-    },
   ],
 })
