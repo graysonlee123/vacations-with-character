@@ -4,7 +4,7 @@
     <ul class="dropdowns">
       <li
         v-for="({ label, text }, index) of items"
-        :key="makeSlug(label)"
+        :key="$slugify(label)"
         class="dropdown"
       >
         <div class="label">
@@ -12,7 +12,7 @@
             class="button"
             @click="e => handleClick(e, index)"
             :aria-expanded="index === openedItem ? 'true' : 'false'"
-            :aria-controls="`#${makeSlug(label)}`"
+            :aria-controls="$slugify(label)"
           >
             {{ label }}
           </button>
@@ -24,7 +24,7 @@
           @leave="handleTransitionLeave"
         >
           <div
-            :id="makeSlug(label)"
+            :id="$slugify(label)"
             :aria-hidden="index === openedItem ? 'false' : 'true'"
             class="content"
             v-show="index === openedItem"

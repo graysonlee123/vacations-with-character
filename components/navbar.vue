@@ -13,7 +13,7 @@
         </nuxt-link>
       </div>
       <div class="links-wrapper">
-        <span v-for="{ label, slug } of links" :key="slug">
+        <span v-for="{ label, slug } of links" :key="$slugify(label)">
           <a
             v-if="$links(slug)"
             class="link"

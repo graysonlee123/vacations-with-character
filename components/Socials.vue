@@ -2,7 +2,7 @@
   <div class="socials">
     <a
       v-for="{ id, link, ariaLabel, alt } of socials"
-      :key="id"
+      :key="$slugify(id)"
       class="social"
       :href="link"
       target="_blank"

@@ -7,7 +7,7 @@
       v-show="open"
     >
       <ul class="list">
-        <li class="row" v-for="{ slug, label } of links" :key="slug">
+        <li class="row" v-for="{ slug, label } of links" :key="$slugify(label)">
           <a
             v-if="$links(slug)"
             class="link"

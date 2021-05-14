@@ -17,7 +17,11 @@ export default {
   css: ['~/assets/scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: '~/plugins/splide.client' }, { src: '~/plugins/links' }],
+  plugins: [
+    { src: '~/plugins/splide.client' },
+    { src: '~/plugins/links' },
+    { src: '~/plugins/slugify' },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: {

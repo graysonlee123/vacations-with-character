@@ -2,10 +2,10 @@
   <footer class="footer">
     <Container size="sm">
       <div class="flex">
-        <div v-for="{ title, links } of columns" :key="title">
+        <div v-for="{ title, links } of columns" :key="$slugify(title)">
           <span class="label">{{ title }}</span>
           <ul>
-            <li v-for="{ label, slug } of links" :key="slug">
+            <li v-for="{ label, slug } of links" :key="$slugify(label)">
               <a
                 v-if="$links(slug)"
                 :href="slug"
@@ -45,7 +45,7 @@
         <div class="badges">
           <span
             v-for="{ filename, width, height, alt } in badges"
-            :key="filename"
+            :key="$slugify(filename)"
           >
             <img
               :src="require(`~/assets/images/badges/${filename}`)"
