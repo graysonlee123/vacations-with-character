@@ -7,9 +7,18 @@
       v-show="open"
     >
       <ul class="list">
-        <li class="row" v-for="link of links" :key="link.slug">
-          <nuxt-link class="link" :to="link.slug">
-            {{ link.label }}
+        <li class="row" v-for="{ slug, label } of links" :key="$slugify(label)">
+          <a
+            v-if="$links(slug)"
+            class="link"
+            :href="slug"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ label }}
+          </a>
+          <nuxt-link v-else class="link" :to="slug">
+            {{ label }}
           </nuxt-link>
         </li>
       </ul>

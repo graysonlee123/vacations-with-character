@@ -5,17 +5,18 @@
         <nuxt-link to="/">
           <img
             class="logo"
-            src="https://via.placeholder.com/88x88"
-            width="44"
-            height="44"
+            :src="require('~/assets/images/logo.svg')"
+            width="38"
+            height="38.07"
             alt="Vacations With Character Logo"
           />
         </nuxt-link>
       </div>
       <div class="links-wrapper">
-        <span v-for="{ label, slug } of links" :key="slug">
+        <span v-for="{ label, slug } of links" :key="$slugify(label)">
           <a
             v-if="$links(slug)"
+            class="link"
             :href="slug"
             target="_blank"
             rel="noopener noreferrer"
@@ -108,9 +109,11 @@ a.nuxt-link-exact-active {
   top: 0;
   left: 0;
   width: 100%;
+  height: 60px;
   z-index: 5;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+
   @include m.fs('base');
   color: a.color('white');
   background-color: a.color('ocean');
@@ -121,6 +124,7 @@ a.nuxt-link-exact-active {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
 .logo {

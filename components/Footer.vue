@@ -2,10 +2,10 @@
   <footer class="footer">
     <Container size="sm">
       <div class="flex">
-        <div v-for="{ title, links } of columns" :key="title">
+        <div v-for="{ title, links } of columns" :key="$slugify(title)">
           <span class="label">{{ title }}</span>
           <ul>
-            <li v-for="{ label, slug } of links" :key="slug">
+            <li v-for="{ label, slug } of links" :key="$slugify(label)">
               <a
                 v-if="$links(slug)"
                 :href="slug"
@@ -24,7 +24,7 @@
           <div>
             <nuxt-link to="/">
               <img
-                src="https://via.placeholder.com/108x108"
+                :src="require('~/assets/images/logo-button.svg')"
                 width="54"
                 height="54"
                 alt="Vacations with Character Logo"
@@ -34,24 +34,7 @@
           <p class="copyright">
             Vacations with Character ® <br />All Rights Reserved, 2021.
           </p>
-          <div class="socials">
-            <a
-              v-for="{ id, link, ariaLabel, alt } of socials"
-              :key="id"
-              class="social"
-              :href="link"
-              target="_blank"
-              rel="noopener noreferrer"
-              :aria-label="ariaLabel"
-            >
-              <img
-                :src="require(`~/static/images/social-icons/${id}-72x72.jpeg`)"
-                width="24"
-                height="24"
-                :alt="alt"
-              />
-            </a>
-          </div>
+          <Socials />
           <p>
             <a :href="`tel:+1-${phone.plain}`">{{ phone.pretty }}</a
             ><br /><a :href="`mailto:${email}`" target="_blank">{{ email }}</a>
@@ -60,42 +43,16 @@
       </div>
       <div class="fine">
         <div class="badges">
-          <span>
+          <span
+            v-for="{ filename, width, height, alt } in badges"
+            :key="$slugify(filename)"
+          >
             <img
-              :src="
-                require('~/static/images/badges/universal-preferred-agency-@2x.jpeg')
-              "
-              width="132"
-              height="31.5"
-              alt="Universal Preferred Travel Agency"
-            />
-          </span>
-          <span>
-            <img
-              :src="require('~/static/images/badges/clia-agent-@2x.jpeg')"
-              width="96.5"
-              height="36.5"
-              alt="CLIA Agent"
-            />
-          </span>
-          <span>
-            <img
-              :src="
-                require('~/static/images/badges/travel-leaders-network-@2x.jpeg')
-              "
-              width="78"
-              height="36"
-              alt="Travel Leaders Network Member"
-            />
-          </span>
-          <span>
-            <img
-              :src="
-                require('~/static/images/badges/disney-authorized-vacation-planner-@2x.jpeg')
-              "
-              width="70.5"
-              height="33.5"
-              alt="Disney Authorized Vacation Planner"
+              :src="require(`~/assets/images/badges/${filename}`)"
+              :width="width"
+              :height="height"
+              :alt="alt"
+              :title="alt"
             />
           </span>
         </div>
@@ -120,6 +77,32 @@
 export default {
   data() {
     return {
+      badges: [
+        {
+          filename: 'disney-authorized-vacation-planner.jpeg',
+          width: 70.5,
+          height: 33.5,
+          alt: 'Disney Authorized Vacation Planner',
+        },
+        {
+          filename: 'travel-leaders-network.jpeg',
+          width: 78,
+          height: 36,
+          alt: 'Travel Leaders Network Member',
+        },
+        {
+          filename: 'clia-agent.jpeg',
+          width: 96.5,
+          height: 36.5,
+          alt: 'CLIA Agent',
+        },
+        {
+          filename: 'universal-preferred-agency.jpeg',
+          width: 132,
+          height: 31.5,
+          alt: 'Universal Preferred Travel Agency',
+        },
+      ],
       columns: [
         {
           title: 'About',
@@ -217,9 +200,6 @@ export default {
     }
   },
   computed: {
-    socials() {
-      return this.$store.state.socials
-    },
     email() {
       return this.$store.state.email
     },
@@ -282,18 +262,6 @@ a:hover {
 .copyright {
   margin-top: 0.75rem;
   margin-bottom: 1.25rem;
-}
-
-.socials {
-  margin-bottom: 1rem;
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.social {
-  @include m.social-hover;
 }
 
 .fine {

@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="block"
-    :class="{ 'block-wide': width === 'wide', 'block-tall': height === 'tall' }"
-  >
+  <div class="block">
     <div class="text-wrapper">
       <h3 class="title">
         <slot name="title">Title</slot>
@@ -10,47 +7,10 @@
       <p class="text">
         <slot name="text"></slot>
       </p>
-      <div class="socials">
-        <a
-          v-for="{ id, link, ariaLabel, alt } of socials"
-          :key="id"
-          :href="link"
-          target="_blank"
-          rel="noopener noreferrer"
-          :aria-label="ariaLabel"
-          class="social"
-        >
-          <img
-            src="https://via.placeholder.com/96x96"
-            width="48"
-            height="48"
-            :alt="alt"
-          />
-        </a>
-      </div>
+      <Socials :size="48" />
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  props: {
-    width: {
-      type: String,
-      default: null,
-    },
-    height: {
-      type: String,
-      default: null,
-    },
-  },
-  computed: {
-    socials() {
-      return this.$store.state.socials
-    },
-  },
-}
-</script>
 
 <style lang="scss" scoped>
 @use '~/assets/scss/mixins' as m;
@@ -73,14 +33,8 @@ export default {
   margin-bottom: 1rem;
 }
 
-.socials {
-  margin-top: 1rem;
-  display: flex;
-  gap: 14px;
-}
-
-.social {
-  @include m.social-hover;
+.text {
+  margin-bottom: 1rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -89,20 +43,6 @@ export default {
     margin-top: 0;
     grid-row-start: unset;
   }
-
-  .block-wide {
-    aspect-ratio: 2 / 1;
-    grid-column: auto / span 2;
-  }
-
-  .block-tall {
-    aspect-ratio: 1 / 2;
-    grid-row: auto / span 2;
-  }
-
-  .block-tall.block-wide {
-    aspect-ratio: 1;
-  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -110,10 +50,8 @@ export default {
     padding: 2.5rem;
   }
 
-  .socials {
-    margin-top: 2.5rem;
-    flex-flow: row wrap;
-    max-width: 200px;
+  .text {
+    margin-bottom: 3rem;
   }
 }
 </style>

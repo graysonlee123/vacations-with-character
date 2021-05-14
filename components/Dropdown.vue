@@ -4,16 +4,15 @@
     <ul class="dropdowns">
       <li
         v-for="({ label, text }, index) of items"
-        :key="makeSlug(label)"
+        :key="$slugify(label)"
         class="dropdown"
-        :class="{ 'is-open': index === openedItem }"
       >
         <div class="label">
           <button
             class="button"
             @click="e => handleClick(e, index)"
             :aria-expanded="index === openedItem ? 'true' : 'false'"
-            :aria-controls="`#${makeSlug(label)}`"
+            :aria-controls="$slugify(label)"
           >
             {{ label }}
           </button>
@@ -25,7 +24,7 @@
           @leave="handleTransitionLeave"
         >
           <div
-            :id="makeSlug(label)"
+            :id="$slugify(label)"
             :aria-hidden="index === openedItem ? 'false' : 'true'"
             class="content"
             v-show="index === openedItem"
@@ -167,10 +166,8 @@ export default {
   &::after {
     transition: 150ms ease transform 150ms;
   }
-}
 
-.is-open {
-  .button {
+  &[aria-expanded='true'] {
     color: a.color('ocean');
     border-color: a.color('ocean');
 

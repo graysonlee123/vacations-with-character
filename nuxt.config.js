@@ -17,7 +17,11 @@ export default {
   css: ['~/assets/scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: '~/plugins/splide.client' }, { src: '~/plugins/links' }],
+  plugins: [
+    { src: '~/plugins/splide.client' },
+    { src: '~/plugins/links' },
+    { src: '~/plugins/slugify' },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: {
@@ -25,7 +29,10 @@ export default {
   },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [],
+  buildModules: [
+    // Optimized Images: https://marquez.co/docs/nuxt-optimized-images
+    '@aceforth/nuxt-optimized-images',
+  ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [

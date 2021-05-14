@@ -1,11 +1,23 @@
 <template>
   <section class="hero">
     <div class="wrapper">
-      <img
-        class="image"
-        :src="require('~/static/images/girl-in-park-with-balloons.jpeg')"
-        alt="Girl in a theme park with balloons"
-      />
+      <picture>
+        <source
+          :srcset="
+            require('~/assets/images/girl-in-park-with-balloons.jpeg?webp')
+          "
+          type="image/webp"
+        />
+        <source
+          :srcset="require('~/assets/images/girl-in-park-with-balloons.jpeg')"
+          type="image/jpeg"
+        />
+        <img
+          class="image"
+          :src="require('~/assets/images/girl-in-park-with-balloons.jpeg?webp')"
+          alt="Girl in a theme park with balloons"
+        />
+      </picture>
       <div class="text-wrapper">
         <div class="text">
           <h1>Vacations with Character</h1>

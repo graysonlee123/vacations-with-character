@@ -6,31 +6,56 @@
     <client-only>
       <Splide :options="splideOptions">
         <SplideSlide>
-          <ImageBox link="/destinations"
+          <ImageBox
+            filename="castle-at-twilight.jpeg"
+            :width="780"
+            :height="780"
+            alt="Castle at twilight with stars and moon"
+            link="/destinations"
             >Disney<br />
             Destinations</ImageBox
           >
         </SplideSlide>
         <SplideSlide>
-          <ImageBox link="/destinations"
+          <ImageBox
+            filename="dragon-on-roof.jpeg"
+            :width="780"
+            :height="780"
+            alt="A dragon breathing fire from a rooftop"
+            link="/destinations"
             >Universal<br />
             Orlando</ImageBox
           >
         </SplideSlide>
         <SplideSlide>
-          <ImageBox link="/destinations"
+          <ImageBox
+            filename="cruise-ship.jpeg"
+            :width="780"
+            :height="780"
+            alt="A cruise ship setting sail"
+            link="/destinations"
             >Cruising<br />
             Adventures</ImageBox
           >
         </SplideSlide>
         <SplideSlide>
-          <ImageBox link="/destinations"
+          <ImageBox
+            filename="family-adventuring-in-mountains.jpeg"
+            :width="780"
+            :height="780"
+            alt="A small family adventuring in the mountains"
+            link="/destinations"
             >Adventures by<br />
             Disney</ImageBox
           >
         </SplideSlide>
         <SplideSlide>
-          <ImageBox link="/destinations"
+          <ImageBox
+            filename="thatch-roofs-and-resort-pool.jpeg"
+            :width="780"
+            :height="780"
+            alt="Thatch roofs and resort pool"
+            link="/destinations"
             >All-inclusive<br />
             Resorts</ImageBox
           >
