@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HomeHero />
+    <Hero />
 
     <Notice>
       Worried about wellbeing and safety measures during the Covid-19 pandemic?

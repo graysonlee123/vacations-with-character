@@ -11,7 +11,7 @@
             :width="780"
             :height="780"
             alt="Castle at twilight with stars and moon"
-            link="/destinations"
+            link="/destinations/disney"
             >Disney<br />
             Destinations</ImageBox
           >
@@ -22,7 +22,7 @@
             :width="780"
             :height="780"
             alt="A dragon breathing fire from a rooftop"
-            link="/destinations"
+            link="/destinations/universal-orlando"
             >Universal<br />
             Orlando</ImageBox
           >
@@ -33,7 +33,7 @@
             :width="780"
             :height="780"
             alt="A cruise ship setting sail"
-            link="/destinations"
+            link="/destinations/cruising"
             >Cruising<br />
             Adventures</ImageBox
           >
@@ -44,7 +44,7 @@
             :width="780"
             :height="780"
             alt="A small family adventuring in the mountains"
-            link="/destinations"
+            link="/destinations/adventures-by-disney"
             >Adventures by<br />
             Disney</ImageBox
           >
@@ -55,7 +55,7 @@
             :width="780"
             :height="780"
             alt="Thatch roofs and resort pool"
-            link="/destinations"
+            link="/destinations/all-inclusive-resorts"
             >All-inclusive<br />
             Resorts</ImageBox
           >
