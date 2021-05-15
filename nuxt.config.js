@@ -36,12 +36,15 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    // https://content.nuxtjs.org/
+    '@nuxt/content',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
+    icon: {},
     manifest: {
       lang: 'en',
     },
@@ -51,4 +54,7 @@ export default {
   build: {
     transpile: ['@splidejs/vue-splide'],
   },
+
+  // https://content.nuxtjs.org/installation
+  content: {},
 }

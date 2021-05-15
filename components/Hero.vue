@@ -22,15 +22,13 @@
       </picture>
       <div class="text-wrapper">
         <div class="text">
-          <h1>Vacations with Character</h1>
+          <h1><slot name="title">Title here...</slot></h1>
           <p>
-            Vacations with Character® is a Family-Owned, Full-Service,
-            Authorized Travel Agency. Making your Vacations Dreams Come True in
-            the Happiest Places on Earth is our Specialty!
+            <slot name="subtitle"></slot>
           </p>
-          <div>
-            <nuxt-link class="button" to="/destinations">
-              See Destinations
+          <div v-if="link">
+            <nuxt-link class="button" :to="link">
+              <slot name="link">Button text...</slot>
             </nuxt-link>
           </div>
         </div>
@@ -38,6 +36,14 @@
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  props: {
+    link: String,
+  },
+}
+</script>
 
 <style lang="scss" scoped>
 @use '~/assets/scss/abstracts' as a;

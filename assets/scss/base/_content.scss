@@ -1,0 +1,68 @@
+@use '../mixins' as m;
+@use '../abstracts/' as a;
+
+.article {
+  width: clamp(10rem, 85vw, 54ch);
+  margin: 2rem auto;
+
+  font-family: 'Newsreader', 'Times New Roman', Times, serif;
+  font-size: 18px;
+}
+
+.article a {
+  color: inherit;
+
+  &:hover {
+    color: a.color('ocean');
+  }
+}
+
+.article h1 {
+  @include m.fs('xl');
+  color: a.color('ocean');
+}
+
+.article h2,
+.article h3,
+.article h4,
+.article h5,
+.article h6 {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  @include m.header;
+}
+
+.article * + p {
+  margin-top: 1rem;
+}
+
+.article li {
+  margin-top: 2rem;
+  margin-left: 2rem;
+  margin-bottom: -1rem;
+}
+
+.article * + h2,
+.article * + h3,
+.article * + h4,
+.article * + h5,
+.article * + h6 {
+  margin-top: 2.5rem;
+}
+
+.article h1 + p {
+  margin-top: 0;
+  @include m.fs(sm);
+}
+
+.header {
+}
+
+.main {
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .article {
+    font-size: 21px;
+  }
+}

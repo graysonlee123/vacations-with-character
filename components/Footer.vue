@@ -128,6 +128,10 @@ export default {
               slug: '/about',
             },
             {
+              label: 'Careers',
+              slug: '/careers',
+            },
+            {
               label: 'Wellbeing',
               slug: '/wellbeing',
             },
@@ -158,7 +162,7 @@ export default {
             },
             {
               label: 'FAQs',
-              slug: '/',
+              slug: '/questions',
             },
           ],
         },
@@ -180,19 +184,27 @@ export default {
           ],
         },
         {
-          title: 'Other',
+          title: 'Destinations',
           links: [
             {
-              label: 'Careers',
-              slug: '/careers',
+              label: 'Disney',
+              slug: '/destinations/disney',
             },
             {
-              label: 'Something 1',
-              slug: '/',
+              label: 'Universal Orlando',
+              slug: '/destinations/universal',
             },
             {
-              label: 'Something 2',
-              slug: '/',
+              label: 'Cruising Adventures',
+              slug: '/destinations/cruising',
+            },
+            {
+              label: 'Adventures by Disney',
+              slug: '/destinations/adventures-by-disney',
+            },
+            {
+              label: 'All Inclusive Resorts',
+              slug: '/destinations/all-inclusive-resorts',
             },
           ],
         },
