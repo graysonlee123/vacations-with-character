@@ -1,6 +1,14 @@
 <template>
   <div>
-    <Hero />
+    <Hero link="/">
+      <template #title> Vacations with Character </template>
+      <template #subtitle>
+        Vacations with Character® is a Family-Owned, Full-Service, Authorized
+        Travel Agency. Making your Vacations Dreams Come True in the Happiest
+        Places on Earth is our Specialty!
+      </template>
+      <template #link> See Destinations </template>
+    </Hero>
 
     <Notice>
       Worried about wellbeing and safety measures during the Covid-19 pandemic?
