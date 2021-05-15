@@ -162,7 +162,7 @@ export default {
             },
             {
               label: 'FAQs',
-              slug: '/',
+              slug: '/questions',
             },
           ],
         },
