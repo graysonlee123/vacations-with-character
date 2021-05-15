@@ -192,7 +192,7 @@ export default {
             },
             {
               label: 'Universal Orlando',
-              slug: '/destinations/universal-orlando',
+              slug: '/destinations/universal',
             },
             {
               label: 'Cruising Adventures',

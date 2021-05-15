@@ -18,10 +18,10 @@ export default {
       required: true,
       validator: prop => {
         if (typeof prop === 'number') {
-          return prop < 13
+          return prop < 13 && prop > -1
         } else {
           prop.forEach(value => {
-            if (value < 13) return false
+            if (value < 13 || value > -1) return false
           })
 
           return true
@@ -38,6 +38,12 @@ export default {
 @for $i from 1 through 12 {
   .width-#{$i} {
     grid-column-start: span #{$i};
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .width-0 {
+    display: none;
   }
 }
 
