@@ -66,7 +66,7 @@ export default {
           image: 'dragon-on-roof.jpeg',
           imageAlt: 'A dragon breathing fire from a rooftop',
           text:
-            'This is the place where vacation becomes adventure -- an entire universe of action, thrills, and excitement for all ages. Stay at a fabulous onsite resort, experience the fun of three amazing theme parks, enjoy unique dining and entertainment, plus much more.',
+            'This is the place where vacation becomes adventure - an entire universe of action, thrills, and excitement for all ages. Stay at a fabulous onsite resort, experience the fun of three amazing theme parks, enjoy unique dining and entertainment, plus much more.',
           link: '/destinations/universal',
           linkText: 'Tell Me More',
         },
