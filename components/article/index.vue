@@ -1,11 +1,6 @@
 <template>
   <article class="article">
-    <header class="header">
-      <h1>
-        {{ document.title }}
-      </h1>
-      <p>{{ document.updated }}</p>
-    </header>
+    <ArticleHeader :title="document.title" :updated="document.updated" />
     <main class="main">
       <nuxt-content :document="document" />
     </main>
