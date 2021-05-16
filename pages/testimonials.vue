@@ -10,13 +10,13 @@
 
     <Container>
       <h2 class="testimonials-header">Testimonials</h2>
-      <Spacer height="1rem" />
+      <Spacer height="2rem" />
       <div class="columns">
         <div
           class="item"
           v-for="({ name, quote }, i) of testimonials"
           :key="$slugify(name)"
-          :class="{ odd: i % 2 }"
+          :class="{ odd: i % 2, wide: quote.length > 400 }"
         >
           <Testimonial class="testimonial" :name="name" :quote="quote" />
         </div>
@@ -51,6 +51,21 @@ export default {
     return {
       testimonials: [
         {
+          name: 'Kyle & Hannah',
+          quote:
+            'Jacqui - Hannah and I would like to take a minute to thank you and share the experience we had on our trip to Disney World. It was FANTASTIC. Thank you for your help and making our experience much more enjoyable!',
+        },
+        {
+          name: 'Katie S',
+          quote:
+            'Allison was awesome! She planned the perfect trip to the parks for my family! She reserved great fast passes! She booked Bibbidi Bobbidi boutique for my daughter with short notice! Even got us dinner reservations! She made our trip planning stress free and so easy! ',
+        },
+        {
+          name: 'Anonymous',
+          quote:
+            "Nicole helped us to have everything covered. Her flexibility and personal knowledge were a dream to work with. The trip was so seamless: she knew what we wanted and we are ao gratified and happy that we didn't have to do very much to have the best time that we could possibly have.",
+        },
+        {
           name: 'Jessie H',
           quote:
             "Jessica M. was so helpful in making sure we had every aspect of our trip planned. It was a huge help having everything already mapped out so we weren't wandering around one of the busiest places to vacation. Her tips helped us make the most of our trip and I HIGHLY recommend her!",
@@ -59,6 +74,16 @@ export default {
           name: 'Emily L',
           quote:
             'We just finished our 3rd family trip to Disney and first trip to Universal. We greatly  appreciated all of Jessica R’s help, including finding us a last minute breakfast reservation at Hollywood Studios! She was just a text away when we had day of questions about Jedi training and adding dining reservations, not to mention answering all our Universal dining plan questions and figuring out trip insurance. It was truly a magical vacation and we cannot wait to book our next one!',
+        },
+        {
+          name: 'Michelle M',
+          quote:
+            'Robin - We had the best time!!! We got to do all the things we wanted to do and the Lowe’s Sapphire Falls Resort was absolutely beautiful - just as you said it would be. Thank you for everything from beginning to end. It truly was a magical vacation!',
+        },
+        {
+          name: 'Sarah',
+          quote:
+            'Beth helped me get our Disney tickets and recommended many rides and opportunities to meet my family’s needs. It’s been many years since my husband and I have been there so she was very helpful in explaining all the new rules and processes like fast pass use and rider swap. She also sent a ton of great tip sheets that were really helpful! ',
         },
         {
           name: 'Hollie C',
@@ -76,39 +101,14 @@ export default {
             'Tracie is always willing to go the extra mile to make sure our trip is perfect! She has booked everything from huge family cruises to disney tickets. In addition to making the bookings she will help make sure every detail is perfect!',
         },
         {
-          name: 'Sarah',
-          quote:
-            'Beth helped me get our Disney tickets and recommended many rides and opportunities to meet my family’s needs. It’s been many years since my husband and I have been there so she was very helpful in explaining all the new rules and processes like fast pass use and rider swap. She also sent a ton of great tip sheets that were really helpful! ',
-        },
-        {
-          name: 'Michelle M',
-          quote:
-            'Robin - We had the best time!!! We got to do all the things we wanted to do and the Lowe’s Sapphire Falls Resort was absolutely beautiful - just as you said it would be. Thank you for everything from beginning to end. It truly was a magical vacation!',
-        },
-        {
-          name: 'Donna F',
-          quote:
-            'We had a wonderful time and want to thank you for the great job you did in preparing everything we needed to make this trip so enjoyable! You thought of everything and the little personal touches meant a lot!',
-        },
-        {
-          name: 'Kyle & Hannah',
-          quote:
-            'Jacqui - Hannah and I would like to take a minute to thank you and share the experience we had on our trip to Disney World. It was FANTASTIC. Thank you for your help and making our experience much more enjoyable!',
-        },
-        {
-          name: 'Anonymous',
-          quote:
-            "Nicole helped us to have everything covered. Her flexibility and personal knowledge were a dream to work with. The trip was so seamless: she knew what we wanted and we are ao gratified and happy that we didn't have to do very much to have the best time that we could possibly have.",
-        },
-        {
           name: 'The Harris Family',
           quote:
             'We had a fantastic time! Our hotel, itinerary and theater tickets were truly the best! Thank you for always making our life easier when it comes to travel.',
         },
         {
-          name: 'Katie S',
+          name: 'Donna F',
           quote:
-            'Allison was awesome! She planned the perfect trip to the parks for my family! She reserved great fast passes! She booked Bibbidi Bobbidi boutique for my daughter with short notice! Even got us dinner reservations! She made our trip planning stress free and so easy! ',
+            'We had a wonderful time and want to thank you for the great job you did in preparing everything we needed to make this trip so enjoyable! You thought of everything and the little personal touches meant a lot!',
         },
         {
           name: 'L Haynes',
@@ -158,14 +158,19 @@ export default {
 }
 
 .columns {
-  columns: 3 200px;
-  column-gap: 1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-gap: 1rem;
+  gap: 1rem;
 }
 
 .item {
-  margin-bottom: 2rem;
   display: inline-block;
+}
+
+@media screen and (min-width: 768px) {
+  .item.wide {
+    grid-column: span 2;
+  }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <figure class="card">
-    <blockquote>
+    <blockquote class="blockquote">
       <div class="icon">
         <svg
           width="26"
@@ -47,6 +47,18 @@ export default {
   padding: 2rem 1rem;
 }
 
+.card,
+.blockquote {
+  height: 100%;
+}
+
+.blockquote {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
 .name {
   @include m.fs('sm');
   padding-top: 0.5rem;
@@ -58,7 +70,8 @@ export default {
 }
 
 .icon {
-  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: auto;
 }
 
 .card path {
