@@ -5,7 +5,7 @@
   width: clamp(10rem, 85vw, 54ch);
   margin: 2rem auto;
 
-  font-family: 'Newsreader', 'Times New Roman', Times, serif;
+  font-family: a.$serif-families;
   font-size: 18px;
 }
 
@@ -27,7 +27,7 @@
 .article h4,
 .article h5,
 .article h6 {
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-family: a.$sans-families;
   @include m.header;
 }
 

@@ -82,7 +82,10 @@
 
   .container {
     @include m.container;
-    @include m.box;
+
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: a.$shadow-box;
   }
 }
 </style>

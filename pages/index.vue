@@ -78,7 +78,25 @@
 
     <Spacer height="8.5rem" />
 
-    <DestinationSlider />
+    <Slider
+      title="Destinations - Where the Fun Begins"
+      :options="sliderOptions"
+    >
+      <SplideSlide
+        v-for="{ filename, alt, link, slot } of destinationSlides"
+        :key="$slugify(alt)"
+      >
+        <ImageBox
+          :filename="filename"
+          :width="780"
+          :height="780"
+          :alt="alt"
+          :link="link"
+        >
+          <span v-html="slot"></span>
+        </ImageBox>
+      </SplideSlide>
+    </Slider>
 
     <Spacer height="8.5rem" />
 
@@ -110,6 +128,49 @@
 export default {
   data() {
     return {
+      sliderOptions: {
+        fixedWidth: 390,
+        fixedHeight: 390,
+        breakpoints: {
+          456: {
+            arrows: false,
+            fixedWidth: 240,
+            fixedHeight: 240,
+          },
+        },
+      },
+      destinationSlides: [
+        {
+          filename: 'castle-at-twilight.jpeg',
+          alt: 'Castle at twilight with stars and moon',
+          link: '/destinations/disney',
+          slot: 'Disney<br /> Destinations',
+        },
+        {
+          filename: 'dragon-on-roof.jpeg',
+          alt: 'A dragon breathing fire from a rooftop',
+          link: '/destinations/universal',
+          slot: 'Universal<br /> Orlando',
+        },
+        {
+          filename: 'cruise-ship.jpeg',
+          alt: 'A cruise ship setting sail',
+          link: '/destinations/cruising',
+          slot: 'Cruising<br /> Adventures',
+        },
+        {
+          filename: 'family-adventuring-in-mountains.jpeg',
+          alt: 'A small family adventuring in the mountains',
+          link: '/destinations/adventures-by-disney',
+          slot: 'Adventures by<br /> Disney',
+        },
+        {
+          filename: 'thatch-roofs-and-resort-pool.jpeg',
+          alt: 'Thatch roofs and resort pool',
+          link: '/destinations/all-inclusive-resorts',
+          slot: 'All-inclusive<br /> Resorts',
+        },
+      ],
       promiseDropdownItems: [
         {
           label: 'Best Prices',
