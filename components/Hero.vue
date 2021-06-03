@@ -1,25 +1,12 @@
 <template>
   <section class="hero">
     <div class="wrapper">
-      <picture>
-        <source
-          :srcset="
-            require('~/assets/images/girl-in-park-with-balloons.jpeg?webp')
-          "
-          type="image/webp"
-        />
-        <source
-          :srcset="require('~/assets/images/girl-in-park-with-balloons.jpeg')"
-          type="image/jpeg"
-        />
-        <img
-          class="image"
-          :src="require('~/assets/images/girl-in-park-with-balloons.jpeg?webp')"
-          width="1920"
-          height="1180"
-          alt="Girl in a theme park with balloons"
-        />
-      </picture>
+      <nuxt-picture
+        src="/images/girl-in-park-with-balloons.jpeg"
+        width="1920"
+        height="1180"
+        alt="Girl in a theme park with balloons"
+      />
       <div class="text-wrapper">
         <div class="text">
           <h1><slot name="title">Title here...</slot></h1>

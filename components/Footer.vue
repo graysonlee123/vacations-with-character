@@ -187,6 +187,10 @@ export default {
           title: 'Destinations',
           links: [
             {
+              label: 'Overview',
+              slug: '/destinations',
+            },
+            {
               label: 'Disney',
               slug: '/destinations/disney',
             },

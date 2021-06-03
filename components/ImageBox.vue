@@ -59,7 +59,7 @@ export default {
 .box {
   position: relative;
   overflow: hidden;
-  box-shadow: 0px 4px 4px rgb(0 0 0 / 15%), 0px 0px 15px rgb(0 0 0 / 15%);
+  box-shadow: a.$shadow-box;
   border-radius: 6px;
   padding-top: 100%;
 }
