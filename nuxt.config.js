@@ -32,6 +32,8 @@ export default {
   buildModules: [
     // Optimized Images: https://marquez.co/docs/nuxt-optimized-images
     '@aceforth/nuxt-optimized-images',
+    // https://image.nuxtjs.org/
+    '@nuxt/image',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
