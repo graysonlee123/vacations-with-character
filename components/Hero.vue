@@ -6,6 +6,7 @@
         width="1920"
         height="1180"
         alt="Girl in a theme park with balloons"
+        class="test"
       />
       <div class="text-wrapper">
         <div class="text">
@@ -40,21 +41,26 @@ export default {
   position: relative;
 }
 
-.image {
+.test {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.test ::v-deep img {
   width: 100%;
-  height: 500px;
+  height: 100%;
   object-fit: cover;
   vertical-align: bottom;
 }
 
 .text-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: grid;
+  place-content: center;
   width: 100%;
-  height: 100%;
+  height: min(500px, 80vh);
 
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.35);
   text-align: center;
   color: a.color('white');
 }
@@ -83,12 +89,5 @@ export default {
 
 .button {
   @include m.button;
-}
-
-@media screen and (min-width: 768px) {
-  .image {
-    height: auto;
-    max-height: 728px;
-  }
 }
 </style>

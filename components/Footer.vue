@@ -131,10 +131,6 @@ export default {
               label: 'Careers',
               slug: '/careers',
             },
-            {
-              label: 'Wellbeing',
-              slug: '/wellbeing',
-            },
           ],
         },
         {
@@ -154,7 +150,7 @@ export default {
             },
             {
               label: 'Videos',
-              slug: '/',
+              slug: 'https://www.facebook.com/pg/VacationsWithCharacter/videos/',
             },
             {
               label: 'Get Help',
@@ -176,10 +172,6 @@ export default {
             {
               label: 'Terms / Conditions',
               slug: '/terms-conditions',
-            },
-            {
-              label: 'Authorization',
-              slug: '/authorization',
             },
           ],
         },

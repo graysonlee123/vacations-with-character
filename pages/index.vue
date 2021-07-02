@@ -1,19 +1,14 @@
 <template>
   <div>
-    <Hero link="/">
+    <Hero link="/quote">
       <template #title> Vacations with Character </template>
       <template #subtitle>
         Vacations with Character® is a Family-Owned, Full-Service, Authorized
         Travel Agency. Making your Vacations Dreams Come True in the Happiest
         Places on Earth is our Specialty!
       </template>
-      <template #link> See Destinations </template>
+      <template #link> Get A Quote </template>
     </Hero>
-
-    <Notice>
-      Worried about wellbeing and safety measures during the Covid-19 pandemic?
-      <nuxt-link to="/wellbeing">Here’s what we’re doing to help.</nuxt-link>
-    </Notice>
 
     <Spacer height="5.5rem" />
 
@@ -45,9 +40,7 @@
           <BlocksSocial>
             <template v-slot:title>Follow us!</template>
             <template v-slot:text>
-              We post about relevant <strong>news</strong>, fun
-              <strong>photos</strong>, and helpful <strong>tips</strong> to save
-              you time and money.
+              We post about relevant <strong>news</strong>, share fun <strong>photos</strong>, and provide helpful <strong>tips</strong>.
             </template>
           </BlocksSocial>
         </Column>
