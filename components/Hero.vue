@@ -2,11 +2,11 @@
   <section class="hero">
     <div class="wrapper">
       <nuxt-picture
-        src="/images/girl-in-park-with-balloons.jpeg"
-        width="1920"
-        height="1180"
-        alt="Girl in a theme park with balloons"
-        class="test"
+        :src="imageSrc"
+        :width="imageWidth"
+        :height="imageHeight"
+        :alt="imageAlt"
+        class="image"
       />
       <div class="text-wrapper">
         <div class="text">
@@ -29,6 +29,22 @@
 export default {
   props: {
     link: String,
+    imageSrc: {
+      type: String,
+      default: '/images/girl-in-park-with-balloons.jpeg',
+    },
+    imageWidth: {
+      type: Number,
+      default: 1920,
+    },
+    imageHeight: {
+      type: Number,
+      default: 1180,
+    },
+    imageAlt: {
+      type: String,
+      default: 'A girl in the park with balloons',
+    },
   },
 }
 </script>
@@ -41,17 +57,17 @@ export default {
   position: relative;
 }
 
-.test {
+.image {
   position: absolute;
   inset: 0;
   z-index: -1;
-}
 
-.test ::v-deep img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  vertical-align: bottom;
+  ::v-deep img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+  }
 }
 
 .text-wrapper {
