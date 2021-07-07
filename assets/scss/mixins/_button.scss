@@ -23,10 +23,18 @@
   }
 
   box-shadow: 0 0 0 0 adjust-color($color: a.color('ocean'), $alpha: 1);
-  transition: box-shadow 100ms ease-in-out;
+  transition: box-shadow 100ms ease-in-out, transform 200ms ease-in-out;
+
+  &:focus,
+  &:hover {
+    box-shadow: 0 0 0 4px adjust-color($color: a.color('ocean'), $alpha: -0.5);
+  }
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 4px adjust-color($color: a.color('ocean'), $alpha: -0.5);
+  }
+
+  &:active {
+    transform: scale(0.95);
   }
 }

@@ -4,7 +4,7 @@
       <div class="flex">
         <div v-for="{ title, links } of columns" :key="$slugify(title)">
           <span class="label">{{ title }}</span>
-          <ul>
+          <ul role="list">
             <li v-for="{ label, slug } of links" :key="$slugify(label)">
               <a
                 v-if="$links(slug)"
@@ -24,7 +24,7 @@
           <div>
             <nuxt-link to="/">
               <img
-                :src="require('~/assets/images/logo-button.svg')"
+                :src="`/images/logo-button.svg`"
                 width="54"
                 height="54"
                 alt="Vacations with Character Logo"
@@ -47,12 +47,12 @@
             v-for="{ filename, width, height, alt } in badges"
             :key="$slugify(filename)"
           >
-            <img
-              :src="require(`~/assets/images/badges/${filename}`)"
+            <nuxt-picture
+              :src="`/images/badges/${filename}`"
               :width="width"
               :height="height"
               :alt="alt"
-              :title="alt"
+              :sizes="`sm:${width}px md:${width * 2}px`"
             />
           </span>
         </div>
@@ -80,8 +80,8 @@ export default {
       badges: [
         {
           filename: 'disney-authorized-vacation-planner.jpeg',
-          width: 70.5,
-          height: 33.5,
+          width: 71,
+          height: 34,
           alt: 'Disney Authorized Vacation Planner',
         },
         {
@@ -92,14 +92,14 @@ export default {
         },
         {
           filename: 'clia-agent.jpeg',
-          width: 96.5,
-          height: 36.5,
+          width: 97,
+          height: 37,
           alt: 'CLIA Agent',
         },
         {
           filename: 'universal-preferred-agency.jpeg',
           width: 132,
-          height: 31.5,
+          height: 32,
           alt: 'Universal Preferred Travel Agency',
         },
       ],
@@ -131,10 +131,6 @@ export default {
               label: 'Careers',
               slug: '/careers',
             },
-            {
-              label: 'Wellbeing',
-              slug: '/wellbeing',
-            },
           ],
         },
         {
@@ -154,7 +150,7 @@ export default {
             },
             {
               label: 'Videos',
-              slug: '/',
+              slug: 'https://www.facebook.com/pg/VacationsWithCharacter/videos/',
             },
             {
               label: 'Get Help',
@@ -176,10 +172,6 @@ export default {
             {
               label: 'Terms / Conditions',
               slug: '/terms-conditions',
-            },
-            {
-              label: 'Authorization',
-              slug: '/authorization',
             },
           ],
         },

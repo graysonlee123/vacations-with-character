@@ -4,7 +4,7 @@
 
     <Container>
       <Row align="center">
-        <Column :width="[12, 6]">
+        <Column :width="[12, 8]">
           <Dropdown title="Frequently Asked Questions" :items="questions" />
         </Column>
       </Row>

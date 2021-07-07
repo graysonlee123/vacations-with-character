@@ -2,10 +2,11 @@
   <section class="hero">
     <div class="wrapper">
       <nuxt-picture
-        src="/images/girl-in-park-with-balloons.jpeg"
-        width="1920"
-        height="1180"
-        alt="Girl in a theme park with balloons"
+        :src="imageSrc"
+        :width="imageWidth"
+        :height="imageHeight"
+        :alt="imageAlt"
+        class="image"
       />
       <div class="text-wrapper">
         <div class="text">
@@ -28,6 +29,22 @@
 export default {
   props: {
     link: String,
+    imageSrc: {
+      type: String,
+      default: '/images/girl-in-park-with-balloons.jpeg',
+    },
+    imageWidth: {
+      type: Number,
+      default: 1920,
+    },
+    imageHeight: {
+      type: Number,
+      default: 1180,
+    },
+    imageAlt: {
+      type: String,
+      default: 'A girl in the park with balloons',
+    },
   },
 }
 </script>
@@ -41,20 +58,25 @@ export default {
 }
 
 .image {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-  vertical-align: bottom;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  ::v-deep img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+  }
 }
 
 .text-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: grid;
+  place-content: center;
   width: 100%;
-  height: 100%;
+  height: min(500px, 80vh);
 
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.35);
   text-align: center;
   color: a.color('white');
 }
@@ -83,12 +105,5 @@ export default {
 
 .button {
   @include m.button;
-}
-
-@media screen and (min-width: 768px) {
-  .image {
-    height: auto;
-    max-height: 728px;
-  }
 }
 </style>

@@ -10,7 +10,7 @@
       :aria-label="ariaLabel"
     >
       <img
-        :src="require(`~/assets/images/social-icons/${id}.svg`)"
+        :src="`/images/social-icons/${id}.svg`"
         :width="size"
         :height="size"
         :alt="alt"

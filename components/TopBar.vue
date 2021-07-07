@@ -49,7 +49,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   text-align: center;
-  @include m.fs(xs);
+  @include m.fs(sm);
 }
 
 @media screen and (min-width: 768px) {

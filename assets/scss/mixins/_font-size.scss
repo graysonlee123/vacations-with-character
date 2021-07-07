@@ -1,99 +1,38 @@
+@use 'sass:list';
+
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
 $font-sizes: (
-  '2xs': (
-    'DEFAULT': (
-      10px,
-      1.4,
-    ),
-  ),
-  'xs': (
-    'DEFAULT': (
-      11px,
-      1.6,
-    ),
-  ),
-  'sm': (
-    'DEFAULT': (
-      13px,
-      1.6,
-    ),
-  ),
-  'base': (
-    'DEFAULT': (
-      14px,
-      1.6,
-    ),
-    'sm': 16px,
-  ),
-  'lg': (
-    'DEFAULT': (
-      26px,
-      1.2,
-    ),
-    'sm': 28px,
-    'lg': 30px,
-  ),
-  'xl': (
-    'DEFAULT': (
-      28px,
-      1.2,
-    ),
-    'sm': 32px,
-    'lg': 38px,
-  ),
+  '2xs': 0.625rem,
+  'xs': 0.6875rem,
+  'sm': 0.8125rem,
+  'base': (0.875rem, 1rem),
+  'lg': (1.625rem, 1.875rem),
+  'xl': (1.75rem, 2.375rem)
 );
 
-/// Generate a font size that includes a line height from the maps above
-/// @param {string} $size [base] The font size to get from the maps above
-@mixin fs($size: base) {
+/// Generate a fluid font size from the map above
+/// @param {string} $size [base] The font size to get from the map above
+@mixin fs($size: 'base') {
   @if false == map-has-key($font-sizes, $size) {
     @error 'No font size exists for "$#{$size}". Check the mixins/font-size file for the available font sizes.';
   }
 
-  $size-breakpoints: map-get($font-sizes, $size);
+  $font-size: map-get($font-sizes, $size);
 
-  @if map-has-key($size-breakpoints, 'DEFAULT') {
-    $breakpoint-map: map-get($size-breakpoints, 'DEFAULT');
+  @if type-of($font-size) == 'list' {
+    $min-size: strip-units(list.nth($font-size, 1));
+    $max-size: strip-units(list.nth($font-size, 2));
+    $min-width: 700;
+    $max-width: 1000;
 
-    @if type-of($breakpoint-map) == 'list' {
-      font-size: nth($breakpoint-map, 1);
+    $vwCoefficient: (1600 * ($max-size - $min-size)) / ($max-width - $min-width);
+    $remCoefficient: $min-size - ($min-width * ($max-size - $min-size)) / ($max-width - $min-width);
 
-      @if length($breakpoint-map) > 1 {
-        line-height: nth($breakpoint-map, 2);
-      }
-    } @else {
-      font-size: $breakpoint-map;
-    }
-  }
-
-  @if map-has-key($size-breakpoints, 'sm') {
-    $breakpoint-map: map-get($size-breakpoints, 'sm');
-
-    @media screen and (min-width: 446px) {
-      @if type-of($breakpoint-map) == 'list' {
-        font-size: nth($breakpoint-map, 1);
-
-        @if length($breakpoint-map) > 1 {
-          line-height: nth($breakpoint-map, 2);
-        }
-      } @else {
-        font-size: $breakpoint-map;
-      }
-    }
-  }
-
-  @if map-has-key($size-breakpoints, 'lg') {
-    $breakpoint-map: map-get($size-breakpoints, 'lg');
-
-    @media screen and (min-width: 1400px) {
-      @if type-of($breakpoint-map) == 'list' {
-        font-size: nth($breakpoint-map, 1);
-
-        @if length($breakpoint-map) > 1 {
-          line-height: nth($breakpoint-map, 2);
-        }
-      } @else {
-        font-size: $breakpoint-map;
-      }
-    }
+    font-size: clamp(#{$min-size}rem, calc(#{$vwCoefficient}vw + #{$remCoefficient}rem), #{$max-size}rem);
+  } @else {
+    font-size: $font-size;
   }
 }

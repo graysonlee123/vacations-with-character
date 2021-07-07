@@ -116,6 +116,8 @@ export default {
 
 .dropdowns {
   list-style: none;
+  padding: 0 0 0 20px;
+  margin: 0;
 }
 
 .title {
@@ -165,6 +167,7 @@ export default {
 
   &::after {
     transition: 150ms ease transform 150ms;
+    transform: rotate(90deg);
   }
 
   &[aria-expanded='true'] {
@@ -172,7 +175,7 @@ export default {
     border-color: a.color('ocean');
 
     &::after {
-      transform: rotate(90deg);
+      transform: rotate(0deg);
     }
   }
 }

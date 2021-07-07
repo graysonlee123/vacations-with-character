@@ -5,15 +5,13 @@
     :style="{ '--padding-top': paddingRatio }"
   >
     <div class="content">
-      <picture>
-        <img
-          class="image"
-          :src="require(`~/assets/images/image-box/${filename}`)"
-          :width="width"
-          :height="height"
-          :alt="alt"
-        />
-      </picture>
+      <nuxt-picture
+        class="image"
+        :src="`/images/${filename}`"
+        :width="width"
+        :height="height"
+        :alt="alt"
+      />
       <nuxt-link v-if="link" :to="link" class="link">
         <span class="text">
           <slot>Say Something...</slot>

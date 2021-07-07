@@ -5,7 +5,7 @@
         <nuxt-link to="/">
           <img
             class="logo"
-            :src="require('~/assets/images/logo.svg')"
+            :src="'/images/logo.svg'"
             width="38"
             height="38.07"
             alt="Vacations With Character Logo"

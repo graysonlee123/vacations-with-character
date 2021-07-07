@@ -1,23 +1,12 @@
 <template>
   <section class="cta">
     <div class="container">
-      <picture>
-        <source
-          :srcset="
-            require('~/assets/images/girl-with-parent-with-castle.jpeg?webp')
-          "
-          type="image/webp"
-        />
-        <source
-          :srcset="require('~/assets/images/girl-with-parent-with-castle.jpeg')"
-          type="image/jpeg"
-        />
-        <img
-          :src="require('~/assets/images/girl-with-parent-with-castle.jpeg')"
-          alt="Girl with her parent walking towards a castle"
-          class="image"
-        />
-      </picture>
+      <nuxt-picture
+        :src="`/images/girl-with-parent-with-castle.jpeg`"
+        width="2220"
+        height="1096"
+        alt="Girl with her parent and a castle in background"
+      />
       <div class="text-wrapper">
         <h2 class="title">
           An investment in travel is an investment in yourself!
