@@ -16,10 +16,10 @@
       <Row>
         <Column :width="[12, 8]">
           <ImageBox
-            filename="french-polynesia-island.jpeg"
-            :width="1464"
-            :height="724"
-            alt="French Polynesia Island"
+            filename="crown-with-background-blur.jpeg"
+            :width="1600"
+            :height="800"
+            alt="Crown with a background blur"
             link="/services"
           >
             Our<br />Services
@@ -40,7 +40,9 @@
           <BlocksSocial>
             <template v-slot:title>Follow us!</template>
             <template v-slot:text>
-              We post about relevant <strong>news</strong>, share fun <strong>photos</strong>, and provide helpful <strong>tips</strong>.
+              We post about relevant <strong>news</strong>, share fun
+              <strong>photos</strong>, and provide helpful
+              <strong>tips</strong>.
             </template>
           </BlocksSocial>
         </Column>
