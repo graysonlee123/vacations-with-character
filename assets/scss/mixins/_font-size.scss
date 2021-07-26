@@ -1,16 +1,24 @@
 @use 'sass:list';
+@use 'sass:math';
 
-@function strip-units($number) {
-  @return $number / ($number * 0 + 1);
-}
+@use '../functions' as f;
 
 $font-sizes: (
   '2xs': 0.625rem,
   'xs': 0.6875rem,
   'sm': 0.8125rem,
-  'base': (0.875rem, 1rem),
-  'lg': (1.625rem, 1.875rem),
-  'xl': (1.75rem, 2.375rem)
+  'base': (
+    0.875rem,
+    1rem,
+  ),
+  'lg': (
+    1.625rem,
+    1.875rem,
+  ),
+  'xl': (
+    1.75rem,
+    2.375rem,
+  ),
 );
 
 /// Generate a fluid font size from the map above
@@ -23,15 +31,26 @@ $font-sizes: (
   $font-size: map-get($font-sizes, $size);
 
   @if type-of($font-size) == 'list' {
-    $min-size: strip-units(list.nth($font-size, 1));
-    $max-size: strip-units(list.nth($font-size, 2));
+    $min-size: f.strip-units(list.nth($font-size, 1));
+    $max-size: f.strip-units(list.nth($font-size, 2));
     $min-width: 700;
     $max-width: 1000;
 
-    $vwCoefficient: (1600 * ($max-size - $min-size)) / ($max-width - $min-width);
-    $remCoefficient: $min-size - ($min-width * ($max-size - $min-size)) / ($max-width - $min-width);
+    $vwCoefficient: math.div(
+      (1600 * ($max-size - $min-size)),
+      ($max-width - $min-width)
+    );
+    $remCoefficient: $min-size -
+      math.div(
+        ($min-width * ($max-size - $min-size)),
+        ($max-width - $min-width)
+      );
 
-    font-size: clamp(#{$min-size}rem, calc(#{$vwCoefficient}vw + #{$remCoefficient}rem), #{$max-size}rem);
+    font-size: clamp(
+      #{$min-size}rem,
+      calc(#{$vwCoefficient}vw + #{$remCoefficient}rem),
+      #{$max-size}rem
+    );
   } @else {
     font-size: $font-size;
   }
