@@ -25,14 +25,5 @@
     "sass": "^1.32.12",
     "sass-loader": "^10.1.1",
     "slugify": "^1.5.3"
-  },
-  "prettier": {
-    "arrowParens": "avoid",
-    "bracketSpacing": true,
-    "semi": false,
-    "singleQuote": true,
-    "tabWidth": 2,
-    "trailingComma": "es5",
-    "vueIndentScriptAndStyle": false
   }
 }
